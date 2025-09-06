@@ -1,0 +1,532 @@
+.app-container {
+  overflow-x: hidden;
+}
+
+/* General Container for spacing */
+.nav-container, .hero-section, .domains-section, .recruitment-section, .about-section, .testimonials-section, .contact-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+/* --- Navbar --- */
+.navbar {
+  background-color: var(--white);
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+.nav-logo {
+  height: 40px;
+}
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  font-weight: 500;
+}
+.nav-menu a {
+  color: var(--black);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.nav-menu a:hover {
+  color: var(--yellow);
+}
+.nav-button {
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+.nav-button:hover {
+  background-color: #333;
+}
+
+/* src/App.css (add this at the bottom) */
+
+/* --- Hamburger Menu Icon --- */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--black);
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .nav-button {
+      display: none; /* Hide button on mobile for more space */
+    }
+
+    .hamburger {
+        display: block; /* Show the hamburger */
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%; /* Start off-screen */
+        top: 70px; /* Below the navbar */
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        gap: 0;
+        border-top: 1px solid #eee;
+    }
+
+    .nav-menu.active {
+        left: 0; /* Slide in */
+    }
+
+    .nav-menu li {
+        padding: 1.5rem 0;
+        border-bottom: 1px solid #eee;
+    }
+}
+/* ... keep your other 768px media query ... */
+
+/* --- Hero Section --- */
+.hero-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  min-height: 80vh;
+}
+.hero-content {
+  flex: 1;
+}
+.hero-content h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+}
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 500px;
+}
+.hero-image-container {
+  flex: 1;
+  text-align: right;
+}
+.hero-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Domains Section --- */
+.domains-section {
+  text-align: center;
+  background-color: var(--white);
+}
+.domains-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.domains-section p {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.domains-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.domain-card {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.domain-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* --- Recruitment/CTA Section --- */
+.recruitment-section {
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 4rem;
+}
+.recruitment-content {
+    flex: 1;
+}
+.recruitment-content h3 {
+    color: var(--yellow);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.recruitment-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.recruitment-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 450px;
+}
+.recruitment-image-container {
+    flex: 1;
+}
+.recruitment-image {
+    max-width: 100%;
+}
+.cta-button {
+  background-color: var(--yellow);
+  color: var(--black);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+.cta-button:hover {
+  background-color: #ffca4a;
+}
+
+/* --- About E-Cell Section --- */
+.about-section {
+    text-align: center;
+    background-color: #FAFAFA;
+}
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+.about-section > p {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+.about-text-box {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 3rem;
+    border-radius: 12px;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* --- Testimonials Section --- */
+.testimonials-section {
+    text-align: center;
+}
+.testimonials-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+.testimonials-section p {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* --- Contact Us Section --- */
+.contact-section {
+    text-align: center;
+    background-color: #FAFAFA;
+}
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+.contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+}
+.contact-form button {
+    align-self: center;
+}
+
+
+/* --- Footer --- */
+.footer-section {
+    background-color: var(--footer-bg);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 1rem;
+}
+.footer-logo-image {
+    max-width: 200px;
+    margin-bottom: 1.5rem;
+}
+.footer-section p {
+    margin-bottom: 1.5rem;
+}
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.footer-socials a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .nav-menu {
+        display: none; /* Simple hiding for mobile, can be replaced with a hamburger menu */
+    }
+    .domains-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-section {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-image-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .recruitment-section {
+        flex-direction: column;
+        padding: 2rem;
+        text-align: center;
+    }
+    .domains-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* === REVISED ABOUT SECTION STYLES === */
+.about-section {
+    background-color: var(--white);
+    text-align: left;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+}
+.section-title {
+    display: inline-block;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+.section-title.yellow-bg {
+    background-color: var(--yellow);
+    padding: 0.2rem 0.8rem;
+    border-radius: 6px;
+}
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.about-content-box {
+    background-color: var(--card-dark);
+    color: var(--white);
+    padding: 3rem;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    line-height: 1.7;
+}
+
+.about-column {
+    border-right: 1px solid var(--border-light);
+    padding-right: 2rem;
+}
+
+.about-column:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.quote-author {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--yellow);
+}
+
+
+/* === NEW EVENTS SECTION STYLES === */
+.events-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 0;
+    background-color: var(--white);
+    text-align: left;
+}
+
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.event-item {
+    border: 2px solid var(--border-light);
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    background-color: var(--white);
+}
+
+.event-item.active {
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+}
+
+.event-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.event-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.event-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+.event-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 500;
+    flex-shrink: 0;
+    background-color: var(--white);
+}
+
+.event-item.active .event-icon {
+    background-color: var(--white);
+}
+
+.event-content {
+    margin-top: 1.5rem;
+    padding-left: 5rem;
+    line-height: 1.6;
+    font-size: 1rem;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === RESPONSIVE STYLES FOR NEW SECTIONS === */
+@media (max-width: 992px) {
+    .about-content-box {
+        grid-template-columns: 1fr;
+    }
+    .about-column {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid var(--border-light);
+        padding-bottom: 2rem;
+    }
+    .about-column:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .event-content {
+      padding-left: 0;
+    }
+    .event-header {
+      gap: 1rem;
+    }
+    .event-title {
+      font-size: 1.5rem;
+    }
+}

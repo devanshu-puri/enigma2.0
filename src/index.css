@@ -1,0 +1,31 @@
+/* Define color variables for easy use */
+:root {
+  --yellow: #FEBC2F;
+  --black: #000000;
+  --white: #FFFFFF;
+  --footer-bg: #292A32;
+  --card-dark: #1E1E1E;
+  --border-light: #3e3e3e;
+}
+
+/* Apply base styles */
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: var(--white);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reset default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
