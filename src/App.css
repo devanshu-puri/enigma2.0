@@ -40,7 +40,9 @@ body::after {
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
   
+  /* A light border to see on the hero gradient */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+  
   z-index: 1000; 
   padding: 1rem 0;
   
@@ -48,25 +50,29 @@ body::after {
   transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
 }
 
-.navbar .nav-menu a {
-  color: var(--black);
-  text-shadow: none;
+/* Default text is WHITE */
+.navbar .nav-menu a,
+.navbar .dropdown-trigger {
+  color: #FFFFFF;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  transition: color 0.4s ease;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
-.navbar .nav-menu a:hover {
+/* Find this block */
+.navbar .nav-menu a:hover,
+.navbar .dropdown-trigger:hover {
   color: var(--yellow);
 }
 
+/* Hamburger is ALWAYS BLACK */
 .navbar .hamburger .bar {
   background-color: var(--black);
-  /* transition: background-color 0.4s ease; */
 }
 
 
-/* 2. Scrolled State (when isScrolled is true) */
+/* --- 2. Scrolled State (when the .navbar-scrolled class is present) --- */
 .navbar.navbar-scrolled {
-  /* The glassy background appears */
+  /* The glassy white background appears */
   background-color: rgba(255, 255, 255, 0.5); 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -75,13 +81,16 @@ body::after {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
-/* Text and icons become BLACK in the scrolled state for readability */
-.navbar.navbar-scrolled .nav-menu a {
+/* Scrolled text becomes BLACK */
+.navbar.navbar-scrolled .nav-menu a,
+.navbar.navbar-scrolled .dropdown-trigger {
   color: var(--black);
   text-shadow: none;
 }
-.navbar.navbar-scrolled .nav-menu a:hover {
-  color: var(--yellow);
+/* REPLACE the block above with this new one */
+.navbar .nav-menu a:hover,
+.navbar .dropdown-trigger:hover {
+  color: #E5E7EB; /* A nice, subtle greyish white */
 }
 .navbar.navbar-scrolled .hamburger .bar {
   background-color: var(--black);
@@ -262,29 +271,32 @@ To restore original styling, replace the dropdown styles below with these:
 .hero-section.hero-gradient-background {
   width: 100%;
   min-height: 100vh;
-  margin: 0;
-  padding: 80px 5% 2rem 5%;
   box-sizing: border-box;
+  position: relative; 
+  overflow: hidden;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
   gap: 2rem;
-  position: relative; 
-  overflow: hidden; 
-  color: #ffffff; 
+  padding: 80px 5%; /* Side padding */
+  color: #ffffff;
 }
+
+/* --- The Animated Gradient (applies to all screen sizes) --- */
 .hero-gradient-background {
-  /* THE ONLY CHANGE IS HERE: The new color scheme */
-  background: linear-gradient(-45deg, #ff5005, #dbba95, #d0bce1, #ff5005);
+  /* THIS IS THE NEW, UPDATED GRADIENT WITH YOUR COLOR SCHEME */
+  background: linear-gradient(-45deg, #DC6E03, #F89508, #FECD4B, #FFF1C6);
+  
   background-size: 400% 400%;
   animation: moveGradient 15s ease infinite;
 }
+
 @keyframes moveGradient {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+/* --- The Grainy Texture Overlay (applies to all screen sizes) --- */
 .hero-gradient-background::after {
   content: '';
   position: absolute;
@@ -292,34 +304,74 @@ To restore original styling, replace the dropdown styles below with these:
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
-  opacity: 0.1; 
+  background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+  opacity: 0.15; 
   z-index: 1; 
+  pointer-events: none; 
 }
-.hero-gradient-background .hero-content {
+
+/* --- Desktop Two-Column Layout --- */
+.hero-section.hero-gradient-background {
+  flex-direction: row; /* Side-by-side on desktop */
+}
+.hero-content {
   flex: 1;
   text-align: left;
   max-width: 600px;
-  z-index: 2;
 }
-.hero-gradient-background .hero-image-container {
+.hero-image-container {
   flex: 1;
   text-align: center;
-  z-index: 2;
 }
-.hero-gradient-background h1 {
-  font-size: 5rem;
+
+/* --- Content Styling (applies to all screen sizes) --- */
+.hero-content,
+.hero-image-container {
+  position: relative; 
+  z-index: 2;         
+}
+
+.hero-content h1 {
+  font-size: 5.5rem; /* Made slightly bigger */
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color:var(--black);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transform: translateX(15px); /* Nudged slightly to the right */
 }
-.hero-gradient-background .hero-subtitle,
-.hero-gradient-background .hero-description {
-  color: inherit;
+
+.hero-content .hero-subtitle {
+  color: black;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+  font-size: 1.1rem; /* Made smaller */
+  margin-bottom: 1rem; /* Added margin for better spacing */
 }
-.hero-gradient-background h1,
-.hero-gradient-background .hero-subtitle,
-.hero-gradient-background .hero-description {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+.hero-content .hero-description {
+  color: black;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  font-weight: 400; /* Lighter weight for smaller text */
+  font-size: 1rem; /* Made even smaller */
+}
+
+.hero-image {
+  max-width: 100%;
+  max-height: 400px;
+  height: auto;
+}
+
+/* --- Responsive Layout for Smaller Screens --- */
+@media (max-width: 992px) {
+  .hero-section.hero-gradient-background {
+    flex-direction: column; /* Stack columns vertically on mobile */
+    padding-top: 120px;
+  }
+  
+  .hero-content {
+    text-align: center; /* Center the text when stacked */
+    margin-bottom: 2rem;
+  }
 }
 
 /* --- Other Sections --- */

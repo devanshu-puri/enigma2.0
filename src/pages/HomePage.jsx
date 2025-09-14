@@ -16,6 +16,8 @@ const domainData = [
 // This DomainCard component is already correct and does not need changes.
 // In src/pages/HomePage.jsx, REPLACE the old DomainCard component with this one
 
+// In src/pages/HomePage.jsx, REPLACE the old DomainCard component with this one
+
 const DomainCard = ({ title, imageSrc, variant }) => (
   <div className={`domain-code-card domain-code-card--${variant}`}>
     {/* This new inner wrapper will hold the text content */}
@@ -24,8 +26,8 @@ const DomainCard = ({ title, imageSrc, variant }) => (
         <h3 className="domain-code-title">{title}</h3>
       </div>
       <a href="#" className="domain-code-link">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 16 16 12 12 8" /><line x1="8" y1="12" x2="16" y2="12" /></svg>
-        <span>Learn more</span>
+        {/* <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 16 16 12 12 8" /><line x1="8" y1="12" x2="16" y2="12" /></svg> */}
+        {/* <span>Learn more</span> */}
       </a>
     </div>
     {/* The image is now a sibling, making it easy to position */}
@@ -67,18 +69,6 @@ const HomePage = () => {
               <DomainCard key={domain.title} {...domain} />
             ))}
           </div>
-        </section>
-
-        <section className="recruitment-section">
-            <div className="recruitment-content">
-                <h3>Let's make things happen</h3>
-                <h2>Join our recruitment for 2024!</h2>
-                <p>Become a part of our family, express your entrepreneurship, take it to the next level and build something that solves people’s problems.</p>
-                <button className="cta-button">Apply Now</button>
-            </div>
-            <div className="recruitment-image-container">
-                <img src="/assets/xyz.png" alt="Recruitment" className="recruitment-image" />
-            </div>
         </section>
         
         <section id="about" className="about-section">
@@ -122,11 +112,8 @@ const HomePage = () => {
           alt="Enigma Footer Logo"
           className="footer-logo-image"
         />
-        <p>© 2024 Enigma E-Cell. All Rights Reserved.</p>
-        <div className="footer-socials">
-          <p>Made by devanshu</p>
-          <p>github:- CodeKenshinDev</p>
-        </div>
+        <p>© 2025 Enigma E-Cell. All Rights Reserved.</p>
+       
       </footer>
     </>
   );
