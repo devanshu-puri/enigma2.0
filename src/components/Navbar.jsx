@@ -38,10 +38,14 @@ const Navbar = () => {
           <span className="bar"></span>
         </div>
 
+        {/* ======================================================= */}
+        {/* ============ UPDATED NAVIGATION LINKS ============ */}
+        {/* ======================================================= */}
         <ul className={isOpen ? "nav-menu active" : "nav-menu"}>
           <li><Link to="/" onClick={closeMenu}>Home</Link></li>
           <li><a href="/#about" onClick={closeMenu}>About</a></li>
-          <li><Link to="/team" onClick={closeMenu}>Our Team</Link></li>
+          <li><Link to="/annual-report" onClick={closeMenu}>Annual Report</Link></li>
+          <li><Link to="/blog" onClick={closeMenu}>Blogs</Link></li>
           <li>
             <a 
               href="https://ideathon6-0.ecellnmit.in" 
@@ -52,17 +56,18 @@ const Navbar = () => {
               Ideathon 6.0
             </a>
           </li>
-          <li><a href="/#events" onClick={closeMenu}>Events</a></li>
-          <li><a href="/#contact" onClick={closeMenu}>Contact</a></li>
+          <li><Link to="/team" onClick={closeMenu}>Team</Link></li>
         </ul>
+        
+        {/* The "Join Us" button is now a "Contact Us" link */}
         <a 
-          href="https://your-application-link.com" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+          href="/#contact"
+          onClick={closeMenu}
           className="nav-button"
         >
-          Join Us
+          Contact Us
         </a>
+        {/* ======================================================= */}
       </div>
     </nav>
   );
