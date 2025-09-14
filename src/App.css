@@ -132,6 +132,118 @@ body::after {
   background-color: #333;
 }
 
+/* ======================================================= */
+/* ============ DROPDOWN MENU STYLES ============ */
+/* ======================================================= */
+
+/* 
+ORIGINAL STYLES FOR EASY UNDO:
+To restore original styling, replace the dropdown styles below with these:
+
+.dropdown-menu {
+  background-color: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.dropdown-menu li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.dropdown-item:hover {
+  background-color: var(--yellow);
+  color: var(--black);
+  transform: translateX(2px);
+}
+*/
+
+/* Container for dropdown menu items */
+.dropdown-container {
+  position: relative; /* Required for absolute positioning of dropdown */
+}
+
+/* Dropdown trigger link styling - no arrow needed */
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  color: inherit; /* Inherit color from parent nav-menu a */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Dropdown menu container - TRANSPARENT STYLING */
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Position below the trigger */
+  left: 0;
+  background-color: transparent; /* CHANGED: Made transparent */
+  border: none; /* CHANGED: Removed border */
+  border-radius: 8px;
+  box-shadow: none; /* CHANGED: Removed shadow for seamless blend */
+  min-width: 150px;
+  opacity: 0; /* Start invisible */
+  visibility: hidden; /* Start hidden */
+  transform: translateY(-10px); /* Start slightly above */
+  transition: all 0.3s ease; /* Smooth animation */
+  z-index: 1000; /* Ensure it appears above other content */
+  overflow: hidden; /* Clean rounded corners */
+}
+
+/* Show dropdown when open */
+.dropdown-menu.dropdown-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Move to normal position */
+}
+
+/* Remove default list styling - TRANSPARENT STYLING */
+.dropdown-menu li {
+  list-style: none;
+  border-bottom: none; /* CHANGED: Removed borders for seamless look */
+}
+
+/* Remove border from last item */
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+/* Dropdown item button styling - TRANSPARENT STYLING */
+.dropdown-item {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  background: transparent; /* CHANGED: Transparent background */
+  border: none;
+  text-align: left;
+  font-family: 'Space Grotesk', sans-serif; /* Match website font */
+  font-weight: 500; /* Match nav menu font weight */
+  font-size: 0.95rem;
+  color: var(--black); /* Default text color */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 0; /* Remove button border radius */
+}
+
+/* First dropdown item rounded top */
+.dropdown-menu li:first-child .dropdown-item {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Last dropdown item rounded bottom */
+.dropdown-menu li:last-child .dropdown-item {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Dropdown item hover effect - YELLOW TEXT ON HOVER */
+.dropdown-item:hover {
+  background-color: transparent; /* CHANGED: Keep transparent background */
+  color: var(--yellow); /* CHANGED: Text becomes yellow on hover */
+  transform: translateX(2px); /* Subtle slide effect */
+}
+
 .hamburger {
   display: none;
   cursor: pointer;
@@ -633,6 +745,56 @@ body::after {
     .nav-menu li {
         padding: 1.5rem 0;
         border-bottom: 1px solid #eee;
+    }
+    
+    /* ======================================================= */
+    /* ============ MOBILE DROPDOWN STYLES ============ */
+    /* ======================================================= */
+    
+    /* On mobile, dropdown should appear inline instead of overlaying */
+    .dropdown-container {
+        position: static; /* Reset positioning for mobile */
+    }
+    
+    /* Mobile dropdown menu styling - TRANSPARENT THEME */
+    .dropdown-menu {
+        position: static; /* Position inline instead of absolute */
+        background-color: transparent; /* CHANGED: Made transparent for consistency */
+        backdrop-filter: none; /* CHANGED: Removed blur for seamless look */
+        -webkit-backdrop-filter: none;
+        border: none;
+        border-radius: 0;
+        box-shadow: none; /* CHANGED: Removed shadow for seamless look */
+        min-width: auto;
+        width: 100%;
+        margin-top: 0.5rem; /* Add some space above */
+        opacity: 1; /* Always visible when open */
+        visibility: visible;
+        transform: none;
+    }
+    
+    /* Mobile dropdown items - TRANSPARENT THEME */
+    .dropdown-menu li {
+        padding: 0; /* Remove extra padding */
+        border-bottom: none; /* CHANGED: Removed borders for seamless look */
+        margin: 0;
+    }
+    
+    /* Mobile dropdown item styling - TRANSPARENT THEME */
+    .dropdown-item {
+        padding: 1rem 2rem; /* Increase padding for mobile touch targets */
+        font-size: 0.9rem;
+        width: 100%;
+        text-align: center; /* Center text on mobile */
+        background: transparent; /* CHANGED: Ensure transparent background */
+        color: var(--black); /* Default text color */
+    }
+    
+    /* Mobile dropdown hover effect - YELLOW TEXT */
+    .dropdown-item:hover {
+        background-color: transparent; /* CHANGED: Keep transparent */
+        color: var(--yellow); /* CHANGED: Text becomes yellow on hover */
+        transform: none; /* Remove translateX on mobile */
     }
     .domains-grid {
         grid-template-columns: repeat(2, 1fr);
