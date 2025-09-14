@@ -7,7 +7,7 @@ const domainData = [
   // The image paths below now match your file structure exactly
   { title: "Design", imageSrc: '/assets/domain/d.png', variant: 'light' },
   { title: "Tech", imageSrc: '/assets/domain/t.png', variant: 'yellow' },
-  { title: "Social Media & PR Marketing", imageSrc: '/assets/domain/Spm.png', variant: 'dark' },
+  { title: "Social Media & PR Marketing", imageSrc: '/assets/domain/spm.png', variant: 'dark' },
   { title: "Sponsorship & Finance", imageSrc: '/assets/domain/sf.png', variant: 'light' },
   { title: "Content Creation", imageSrc: '/assets/domain/cc.png', variant: 'yellow' },
   { title: "Strategy & Analysis", imageSrc: '/assets/domain/sanda.png', variant: 'dark' },
