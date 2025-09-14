@@ -1,1 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ENIGMA Blogs</title>
+  <link rel="stylesheet" href="Blog.css" />
+</head>
+<body>
+  <section class="blog-section">
+    <div class="container">
+      <div class="blog-header">
+        <h1>ENIGMA BLOGS</h1>
+        <p>Where ideas ignite and innovation takes flight through thoughtful content and community insights</p>
+      </div>
+
+      <div class="blog-grid" id="blogContainer">
+        <!-- Blog cards injected via Blog.js -->
+      </div>
+
+      <div class="pagination">
+        <button id="prevBtn">Previous</button>
+        <div id="pageNumbers"></div>
+        <button id="nextBtn">Next</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="Blog.js"></script>
+</body>
+</html>
+
 
