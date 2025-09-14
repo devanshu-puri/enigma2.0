@@ -1,0 +1,127 @@
+/* General container for the team page */
+.team-page-section {
+    width: 100%;
+    padding: 4rem 0;
+    background-color: #FAFAFA; /* A light background for contrast */
+}
+
+.team-container {
+    width: 90%;
+    max-width: 1400px; /* Wider max-width for larger teams */
+    margin: 0 auto;
+}
+
+.team-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.team-main-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--black);
+}
+
+/* The grid layout for team member cards */
+.team-grid {
+    display: grid;
+    /* Create a responsive grid that shows 2 to 5 columns */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* Individual team card styling */
+.team-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    aspect-ratio: 1 / 1.2; /* Taller cards for better portrait images */
+    transition: transform 0.4s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.team-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the card */
+    transition: transform 0.4s ease;
+}
+
+.team-card:hover .team-card-img {
+    transform: scale(1.1); /* Subtle zoom effect on hover */
+}
+
+/* The overlay with the member's information */
+.team-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align content to the bottom */
+    padding: 1.5rem;
+    opacity: 1; /* Always visible for key info */
+    transition: background 0.4s ease;
+}
+
+/* New animation: reveal more details on hover */
+.team-card .team-member-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    transform: translateY(40px); /* Start text lower */
+    transition: transform 0.4s ease;
+}
+
+.team-card .team-member-role,
+.team-card .linkedin-link {
+    opacity: 0; /* Hide initially */
+    transition: opacity 0.4s ease 0.1s; /* Delayed fade-in */
+}
+
+.team-card:hover .team-member-name {
+    transform: translateY(0); /* Move text to final position */
+}
+
+.team-card:hover .team-member-role,
+.team-card:hover .linkedin-link {
+    opacity: 1; /* Fade in on hover */
+}
+
+.team-member-role {
+    font-size: 1rem;
+    color: var(--yellow);
+    margin-bottom: 1rem;
+}
+
+.linkedin-link {
+    color: var(--white);
+}
+
+.linkedin-link svg {
+    transition: transform 0.3s ease;
+}
+
+.linkedin-link:hover svg {
+    transform: scale(1.2);
+    color: var(--yellow);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .team-main-title {
+        font-size: 2rem;
+    }
+
+    .team-grid {
+        gap: 1.5rem;
+    }
+}
