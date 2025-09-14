@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import ContactForm from './components/ContactForm';
 import Events from './components/Events'; // Import the new component
 
+
 function App() {
   return (
     <div className="app-container">
@@ -85,6 +86,11 @@ function App() {
                 <img src="/assets/img2.png" alt="Testimonial 2" />
                 <img src="/assets/img3.png" alt="Testimonial 3" />
                 <img src="/assets/img4.png" alt="Testimonial 4" />
+                <img src="/assets/img5.jpeg" alt="Testimonial 5" />
+                <img src="/assets/img6.png" alt="Testimonial 6" />
+                <img src="/assets/img7.jpg" alt="Testimonial 7" />
+                <img src="/assets/img8.png" alt="Testimonial 8" />
+                <img src="/assets/img9.jpg" alt="Testimonial 9" />
             </div>
         </section>
         
