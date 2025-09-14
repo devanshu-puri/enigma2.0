@@ -2,7 +2,13 @@
 
 import React from "react";
 import "./TeamPage.css";
-import TeamCardAnimation from "../components/TeamCardAnimation";
+import dynamic from "next/dynamic";
+
+const TeamCardAnimation = dynamic(
+  () => import("../components/TeamCardAnimation"),
+  { ssr: false } // ⬅️ disables server-side rendering for this component
+);
+
 
 const teamMembers = [
   { name: "Bavitesh M", role: "Head", img: "bavitesh.jpg", link: "https://www.linkedin.com/in/bavitesh-m-017007114" },

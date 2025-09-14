@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-three/fiber": "^9.3.0",
     "@shadergradient/react": "^2.3.2",
+    "gsap": "^3.13.0",
     "lucide-react": "^0.542.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
