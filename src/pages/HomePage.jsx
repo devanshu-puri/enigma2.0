@@ -100,6 +100,11 @@ const HomePage = () => {
                 <img src="/assets/img2.png" alt="Testimonial 2" />
                 <img src="/assets/img3.png" alt="Testimonial 3" />
                 <img src="/assets/img4.png" alt="Testimonial 4" />
+                <img src="/assets/img5.png" alt="Testimonial 5" />
+                <img src="/assets/img6.png" alt="Testimonial 6" />
+                <img src="/assets/img7.png" alt="Testimonial 7" />
+                <img src="/assets/img8.png" alt="Testimonial 8" />
+                <img src="/assets/img9.png" alt="Testimonial 9" />
             </div>
         </section>
 
