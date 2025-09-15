@@ -1,0 +1,174 @@
+/* src/components/ContactForm.css */
+
+/* -- Color Palette Variables -- */
+:root {
+  --darkest: #b64c07;
+  --dark: #dc6e03;
+  --medium: #febc2f;
+  --light: #fecd4b;
+  --lightest: #ffe288;
+  --bg-subtle: #fffaf0; /* A very light, warm background */
+}
+
+/* Main container for the two-column layout */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-subtle); /* CHANGED: Main background color */
+  border-radius: 16px;
+}
+
+/* Left side containing the form */
+.form-section {
+  flex: 1;
+  max-width: 550px;
+}
+
+.get-in-touch {
+  color: var(--dark); /* CHANGED: Text color to match palette */
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-section h2 {
+  font-size: 2.5rem;
+  color: #1f2937;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-section p {
+  color: #6b7280;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Styling for the form itself */
+.contact-form .input-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--dark); /* CHANGED: Focus color */
+  box-shadow: 0 0 0 3px rgba(220, 110, 3, 0.2); /* CHANGED: Focus shadow color */
+}
+
+.name-fields {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.name-fields .input-group {
+  flex: 1;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #4a4a4a; /* CHANGED: Dark grey, less black */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s; /* Added 'color' to transition */
+}
+
+.submit-button:hover {
+  background-color: #febc2f; /* CHANGED: Yellow on hover */
+  color: #333333; /* ADDED: Darker text for better contrast on hover */
+}
+
+/* Right side with image and contact info */
+.info-section {
+  flex: 1;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.image-wrapper {
+  position: relative;
+  /* CHANGED: Gradient background for the image */
+  background: linear-gradient(135deg, var(--medium), var(--lightest));
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.contact-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-details {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  color: var(--dark); /* CHANGED: Icon color */
+  background-color: #fff4e0; /* CHANGED: Icon background color */
+  padding: 0.75rem;
+  border-radius: 50%;
+}
+
+.contact-item span {
+  font-weight: 600;
+  color: #374151;
+}
+
+.contact-item p {
+  margin: 0;
+  color: #6b7280;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
