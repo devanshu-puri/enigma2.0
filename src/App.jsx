@@ -1,14 +1,22 @@
+// src/App.jsx
+
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
+
+// Component Imports
 import Navbar from './components/Navbar';
-import ContactForm from './components/ContactForm';
-import Events from './components/Events'; // Import the new component
+
+// Page Imports - Note the new path from the 'pages' folder
+import HomePage from './pages/HomePage';
+import TeamPage from './pages/TeamPage'; // Make sure TeamPage is now in src/pages/
 
 
 function App() {
   return (
     <div className="app-container">
       <Navbar />
+
 
       {/* Hero Section */}
       <header id="home" className="hero-section">
@@ -106,6 +114,12 @@ function App() {
           <p>github:- CodeKenshinDev</p>
         </div>
       </footer>
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/team" element={<TeamPage />} />
+      </Routes>
+
     </div>
   );
 }
